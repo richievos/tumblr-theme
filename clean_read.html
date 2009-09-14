@@ -6,14 +6,14 @@
         <meta name="color:Text" content="#000"/>
         <meta name="color:Highlight Color" content="#e73839"/>
         <meta name="color:Post Labels" content="#FFFFEA"/>
-        
+
         <!-- END DEFAULT COLORS -->
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
         <link rel="icon" href="{Favicon}"/>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
-        
+
         <!-- iPhone -->
         <meta name="viewport" content="width=920"/>
         <link rel="apple-touch-icon" href="{PortraitURL-128}"></link>
@@ -79,7 +79,7 @@
                             padding-top: 4px;
                             padding-bottom: 3px;
                             padding-left: 5%;
-                            padding-right: 5%; 
+                            padding-right: 5%;
                             text-decoration: none;
                             font-weight: normal;
                             text-transform: uppercase;
@@ -99,7 +99,7 @@
                 padding: 20px;
                 border: 1px solid #ddd;
             }
-                
+
             span.noborder a {
                 border: none !important;
             }
@@ -118,7 +118,7 @@
                 outline: 0;
                 text-decoration: none;
             }
-            
+
             div.text,
             div.photo,
             div.link,
@@ -148,7 +148,7 @@
                     border-bottom-color: {color:Highlight Color};
                     color: {color:Highlight Color};
                 }
-                
+
                     div.text a:hover,
                     div.photo a:hover,
                     div.link a:hover,
@@ -162,7 +162,7 @@
                         border-bottom-style: solid;
                         border-bottom-color: {color:Highlight Color};
                     }
-                    
+
             div.text h2 {
                 text-align: left;
                 padding: 0px;
@@ -174,7 +174,7 @@
                 font-weight: normal;
                 letter-spacing: -.67px;
             }
-            
+
                 div.link h2 a {
                     text-align: left;
                     padding: 0px;
@@ -193,13 +193,13 @@
                     text-decoration: underline;
                     border: none;
                 }
-                    
+
             div.photo a img {
                 padding: 1px;
                 border: 1px solid #FFFFFF;
                 background-color: #333333;
             }
-            
+
                 div.photo a img:hover {
                     border: 1px solid #333333;
                     background-color: #FFFFFF;
@@ -221,27 +221,27 @@
                 font-style: italic;
                 text-align: justify;
             }
-            
+
             div.quote h3 {
                 font-family: "Times New Roman", Times, serif;
                 font-weight: normal;
                 font-style: italic;
             }
-            
+
             div.quote h3.long {
                 font-size: 135%;
             }
-        
+
             div.quote h3.medium {
                 font-size: 160%;
                 line-height: 100%;
             }
-        
+
             div.quote h3.short {
                 font-size: 185%;
                 line-height: 100%;
             }
-        
+
             div.conversation h2 {
                 text-align: center;
                 padding: 0px;
@@ -255,31 +255,31 @@
                 letter-spacing: 0.1em;
                 text-transform: capitalize;
             }
-            
+
             div.conversation ul {
                 font-size: 1em;
                 list-style-type: none;
             }
-            
+
             div.conversation li {
                 text-align: left;
             }
-            
+
                 div.conversation li span.label {
                     font-weight: bold;
                 }
-                
+
             img.sx {
                 float: left;
                 margin-right: 5px;
             }
-        
+
             div.navigation span {
                 margin-right: 10px;
                 margin-left: 10px;
                 font-size: 1em;
             }
-            
+
             div.navigation p span a {
                 padding: 5px;
                 background-color: {color:Highlight Color};
@@ -287,11 +287,11 @@
                 font-weight: bold;
                 text-decoration: none;
             }
-            
+
                 div.navigation p span a:hover {
                     background-color: {color:Text};
                 }
-                
+
             #footer {
                 text-align: left;
                 padding-top: 20px;
@@ -301,7 +301,7 @@
                 font: Normal 20px/1.5em Helvetica, Arial, sans-serif;
                 margin: 30px 20px;
             }
-                
+
                 #footer a {
                     color: {color:Highlight Color};
                     text-decoration: none;
@@ -356,7 +356,7 @@
                 text-decoration: none;
             }
 
-            
+
 						.query { font-weight: bold; }
 
             {CustomCSS}
@@ -397,14 +397,14 @@
                {/block:NoteCount}
              </div>
 
-                {block:Regular}   
+                {block:Regular}
                     <div class="text">
                         {block:Title}<h2>{Title}</h2>{/block:Title}
                         {Body}
                     </div>
                 {/block:Regular}
-                  
-                    
+
+
                 {block:Photo}
                     <div class="photo">
                         <span class="noborder">{LinkOpenTag}<img src="{PhotoURL-500}"
@@ -414,14 +414,14 @@
                         {/block:Caption}
                     </div>
                 {/block:Photo}
-                    
+
                 {block:Quote}
                     <div class="quote">
                         <h3 class="{Length}">&#8220 {Quote} &#8221;</h3>
                         {block:Source}<p>{Source}</p>{/block:Source}
                     </div>
                 {/block:Quote}
-                    
+
                 {block:Link}
                     <div class="link">
                         <h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
@@ -431,7 +431,7 @@
                         {/block:Description}
                     </div>
                 {/block:Link}
-                    
+
                 {block:Conversation}
                     <div class="conversation">
                         {block:Title}<h2>{Title}</h2>{/block:Title}
@@ -446,15 +446,15 @@
                         </ul>
                     </div>
                 {/block:Conversation}
-                    
+
                 {block:Audio}
                     <div class="audio">
                         {AudioPlayerGrey}
-                        
+
                         {block:Caption}<p>{Caption}</p>{/block:Caption}
                     </div>
                 {/block:Audio}
-                    
+
                 {block:Video}
                     <div class="video">
                         {Video-500}
@@ -474,7 +474,7 @@
         {/block:PermalinkPage}
 
 
-            {block:IndexPage} 
+            {block:IndexPage}
                 <div class="navigation">
                     <p>
                         {block:PreviousPage}<span><a href="{PreviousPage}">&#8249; newer</a></span>{/block:PreviousPage}
