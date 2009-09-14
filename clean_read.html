@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <!-- DEFAULT COLORS -->
+        <meta name="color:Text" content="#000"/>
+        <meta name="color:Highlight Color" content="#e73839"/>
+        <meta name="color:Post Labels" content="#FFFFEA"/>
+        
+        <!-- END DEFAULT COLORS -->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+        <link rel="icon" href="{Favicon}"/>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+        
+        <!-- iPhone -->
+        <meta name="viewport" content="width=920"/>
+        <link rel="apple-touch-icon" href="{PortraitURL-128}"></link>
+
+        <style type="text/css">
+            body {
+                text-align: center;
+                margin-right: auto;
+                margin-left: auto;
+                background-color: #eee;
+                color: {color:Text};
+            }
+
+            #header {
+                margin-top: 30px;
+                margin-left: 60px;
+                margin-bottom: 10px;
+                padding: 0;
+                width: 540px;
+                background: #fff;
+                border: 1px solid #ddd;
+            }
+
+            #header a, #header a:active {
+                outline: 0;
+            }
+
+                #header h1 {
+                    font-family: Helvetica, Georgia, "Times New Roman", Times, serif;
+                    font-size: 4.5em;
+                    font-weight: bold;
+                    text-align: left;
+                    margin: 0px 0px 0px 30px;
+                    padding: 10px 10px 25px;
+                    color: #151515;
+                    display: block;
+                    letter-spacing: -.08em;
+                }
+
+                #header ul {
+                    list-style-type: none;
+                    display: block;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+                    text-align: left;
+                  /*
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                  */
+                }
+
+                    #header ul li {
+                        display: inline;
+                    }
+
+                        #header ul li a {
+                            font-family: Lucida Grande, Helvetica Neue, sans-serif;
+                            font-size: 11px;
+                            color: #444;
+                            background-color: #eee;
+                            border: 1px solid #ddd;
+                            padding-top: 4px;
+                            padding-bottom: 3px;
+                            padding-left: 5%;
+                            padding-right: 5%; 
+                            text-decoration: none;
+                            font-weight: normal;
+                            text-transform: uppercase;
+                            line-height: 20px;
+                        }
+
+                            #header ul li a:hover {
+                                border-color: #ccc;
+                            }
+
+            #content {
+                margin-left: 60px;
+                text-align: left;
+                position: relative;
+                width: 500px;
+                background: #fff;
+                padding: 20px;
+                border: 1px solid #ddd;
+            }
+                
+            span.noborder a {
+                border: none !important;
+            }
+
+            .post-header {
+                font: Normal 10px Lucida Grande;
+                color: #444;
+                padding: 3px 7px 3px 7px;
+                background-color: #eee;
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 15px;
+            }
+
+            .post-header a, .post-header a:active {
+                color: #222;
+                outline: 0;
+                text-decoration: none;
+            }
+            
+            div.text,
+            div.photo,
+            div.link,
+            div.video,
+            div.audio,
+            div.conversation,
+            div.quote {
+                padding: 30px
+                margin-bottom: 40px;
+                font-size: 1em;
+                font-family: Helvetica, Georgia, "Times New Roman", Times, serif;
+                position: relative;
+                min-height: 160px;
+                line-height: 1.4em;
+            }
+
+                div.text a,
+                div.photo a,
+                div.link a,
+                div.video a,
+                div.audio a,
+                div.conversation a,
+                div.quote a {
+                    text-decoration: none;
+                    border-bottom-width: 1px;
+                    border-bottom-style: dotted;
+                    border-bottom-color: {color:Highlight Color};
+                    color: {color:Highlight Color};
+                }
+                
+                    div.text a:hover,
+                    div.photo a:hover,
+                    div.link a:hover,
+                    div.video a:hover,
+                    div.audio a:hover,
+                    div.conversation a:hover,
+                    div.quote a:hover {
+                        color: {color:Text};
+                        text-decoration: none;
+                        border-bottom-width: 1px;
+                        border-bottom-style: solid;
+                        border-bottom-color: {color:Highlight Color};
+                    }
+                    
+            div.text h2 {
+                text-align: left;
+                padding: 0px;
+                margin: 0px 0px 10px;
+                font-size: 150%;
+                font-style: normal;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                color: {color:Text};
+                font-weight: normal;
+                letter-spacing: -.67px;
+            }
+            
+                div.link h2 a {
+                    text-align: left;
+                    padding: 0px;
+                    margin-top: 20px;
+                    font-size: 110%;
+                    font-style: normal;
+                    font-family: Georgia, "Times New Roman", Times, serif;
+                    color: {color:Text};
+                    font-weight: normal;
+                    letter-spacing: -.67px;
+                    text-decoration: underline;
+                    border: none;
+                }
+
+                div.link h2 a:hover {
+                    text-decoration: underline;
+                    border: none;
+                }
+                    
+            div.photo a img {
+                padding: 1px;
+                border: 1px solid #FFFFFF;
+                background-color: #333333;
+            }
+            
+                div.photo a img:hover {
+                    border: 1px solid #333333;
+                    background-color: #FFFFFF;
+                }
+
+            div.text ol, div.text ul {
+                margin: 10px;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                font-size: 0.8em;
+                text-align: justify;
+            }
+
+            div.text blockquote,
+            div.photo blockquote,
+            div.link blockquote,
+            div.quote blockquote,
+            div.audio blockquote,
+            div.video blockquote {
+                font-style: italic;
+                text-align: justify;
+            }
+            
+            div.quote h3 {
+                font-family: "Times New Roman", Times, serif;
+                font-weight: normal;
+                font-style: italic;
+            }
+            
+            div.quote h3.long {
+                font-size: 135%;
+            }
+        
+            div.quote h3.medium {
+                font-size: 160%;
+                line-height: 100%;
+            }
+        
+            div.quote h3.short {
+                font-size: 185%;
+                line-height: 100%;
+            }
+        
+            div.conversation h2 {
+                text-align: center;
+                padding: 0px;
+                margin: 0px 0px 10px;
+                font-size: 160%;
+                font-style: normal;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                color: {color:Text};
+                font-weight: normal;
+                font-variant: small-caps;
+                letter-spacing: 0.1em;
+                text-transform: capitalize;
+            }
+            
+            div.conversation ul {
+                font-size: 1em;
+                list-style-type: none;
+            }
+            
+            div.conversation li {
+                text-align: left;
+            }
+            
+                div.conversation li span.label {
+                    font-weight: bold;
+                }
+                
+            img.sx {
+                float: left;
+                margin-right: 5px;
+            }
+        
+            div.navigation span {
+                margin-right: 10px;
+                margin-left: 10px;
+                font-size: 1em;
+            }
+            
+            div.navigation p span a {
+                padding: 5px;
+                background-color: {color:Highlight Color};
+                color: #FFFFFF;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            
+                div.navigation p span a:hover {
+                    background-color: {color:Text};
+                }
+                
+            #footer {
+                text-align: left;
+                padding-top: 20px;
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-top-color: #ccc;
+                font: Normal 20px/1.5em Helvetica, Arial, sans-serif;
+                margin: 30px 20px;
+            }
+                
+                #footer a {
+                    color: {color:Highlight Color};
+                    text-decoration: none;
+                }
+
+            ol.notes {
+                padding: 0px;
+                margin: 25px 0px;
+                list-style-type: none;
+                font-size: .75em;
+                background-color: #eee;
+                border: 1px solid #ddd;
+                color: #444;
+            }
+
+            ol.notes li.note {
+                padding: 3px 7px 3px 7px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            ol.notes li.note a {
+                color: #222;
+                text-decoration: none;
+            }
+
+            ol.notes li.note img.avatar {
+                vertical-align: -4px;
+                margin-right: 10px;
+                width: 16px;
+                height: 16px;
+            }
+
+            ol.notes li.note a img.avatar {
+                border: none;
+            }
+
+            ol.notes li.note span.action {
+                font-weight: normal;
+            }
+
+            ol.notes li.note .answer_content {
+                font-weight: normal;
+            }
+
+            ol.notes li.note blockquote {
+                border-color: #eee;
+                padding: 4px 10px;
+                margin: 10px 0px 0px 25px;
+            }
+
+            ol.notes li.note blockquote a {
+                text-decoration: none;
+            }
+
+            
+						.query { font-weight: bold; }
+
+            {CustomCSS}
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <div id="header">
+            <h1>{Title}</h1>
+
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/mobile">Mobile</a></li>
+                <li><a href="{RSS}">RSS</a></li>
+                <li><a href="/archive">Archive</a></li>
+                <li><a href="/random">Random</a></li>
+            </ul>
+        </div>
+
+
+        <!-- Content -->
+        <div id="content">
+	  				{block:SearchPage}
+						<div id="searchresultcount">
+							<p>Your search for <span class="query">{SearchQuery}</span> returned {SearchResultCount} result(s).</p>
+						</div>
+						{/block:SearchPage}
+            <!-- Post -->
+            {block:Posts}
+
+             <div class="post-header">
+               <span class="date"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></span>
+               {block:NoteCount}
+               &nbsp;
+               <span class="notes">
+               {NoteCountWithLabel}
+               </span>
+               {/block:NoteCount}
+             </div>
+
+                {block:Regular}   
+                    <div class="text">
+                        {block:Title}<h2>{Title}</h2>{/block:Title}
+                        {Body}
+                    </div>
+                {/block:Regular}
+                  
+                    
+                {block:Photo}
+                    <div class="photo">
+                        <span class="noborder">{LinkOpenTag}<img src="{PhotoURL-500}"
+                        alt="{PhotoAlt}"/>{LinkCloseTag}</span>
+                        {block:Caption}
+                            <p>{Caption}</p>
+                        {/block:Caption}
+                    </div>
+                {/block:Photo}
+                    
+                {block:Quote}
+                    <div class="quote">
+                        <h3 class="{Length}">&#8220 {Quote} &#8221;</h3>
+                        {block:Source}<p>{Source}</p>{/block:Source}
+                    </div>
+                {/block:Quote}
+                    
+                {block:Link}
+                    <div class="link">
+                        <h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
+
+                        {block:Description}
+                            <p>{Description}</p>
+                        {/block:Description}
+                    </div>
+                {/block:Link}
+                    
+                {block:Conversation}
+                    <div class="conversation">
+                        {block:Title}<h2>{Title}</h2>{/block:Title}
+
+                        <ul>
+                            {block:Lines}
+                                <li>
+                                    {block:Label}<span class="label">{Label}</span>{/block:Label}
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </div>
+                {/block:Conversation}
+                    
+                {block:Audio}
+                    <div class="audio">
+                        {AudioPlayerGrey}
+                        
+                        {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    </div>
+                {/block:Audio}
+                    
+                {block:Video}
+                    <div class="video">
+                        {Video-500}
+
+                        {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    </div>
+                {/block:Video}
+            {/block:Posts}
+
+
+
+
+        {block:PermalinkPage}
+          {block:PostNotes}
+            {PostNotes}
+          {/block:PostNotes}
+        {/block:PermalinkPage}
+
+
+            {block:IndexPage} 
+                <div class="navigation">
+                    <p>
+                        {block:PreviousPage}<span><a href="{PreviousPage}">&#8249; newer</a></span>{/block:PreviousPage}
+                        {block:NextPage}<span><a href="{NextPage}">older &#8250;</a></span>{/block:NextPage}
+                    </p>
+                </div>
+            {/block:IndexPage}
+
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+                {Description}
+        </div>
+    </body>
+</html>
